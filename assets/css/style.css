@@ -6,9 +6,9 @@
 /***********STYLES FOR MAIN NAVIGATION/HEADER/LOGO *************/
 #header{
     background: none;
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    right: 0;
+    right: 0; */
     width: 100%;
     padding: 1rem 2rem;
     z-index: 9;
@@ -106,7 +106,7 @@ ul li {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     left: 0;
     background-color: rgb(0,0,0);
@@ -146,6 +146,11 @@ ul li {
     position: relative;
     right: -80%
 }
+
+/* .header-push{
+    min-height: 100px;
+} */
+
 /************ END NAVIGATION STYLES *****************/
 
 
@@ -200,6 +205,16 @@ ul li {
     }
     #myNav, .overlay, .overlay-content{
         display: none !important;
+    }
+}
+@media (min-width: 768px){
+    .feed-sm{
+        display:none;
+    }
+}
+@media (max-width: 767px){
+    .instagram-feed-md-lg{
+        display:none;
     }
 }
 @media screen and (max-height: 450px) {

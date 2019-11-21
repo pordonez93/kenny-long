@@ -12,31 +12,37 @@
   <!-- Bootstrap styles -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- FeatherLight Styles -->
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/featherlight.css"/>
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/featherlight.gallery.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/featherlight.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/featherlight.gallery.css"/>
   <!-- Custom Styles -->
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
-  
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/reset.css" />
+
 </head>
 
 <body >
-    <div class="overlay-nav">
-
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="/animations/personalA.html">Animations</a>
+            <a href="/illustrations/personalI.html">Illustrations</a>
+            <a href="/shop.html">Shop</a>
+            <a href="/about.html">About</a>
+        </div>
     </div>
     <!-- Page wrapper -->
     <div class="container-fluid">
-        <header>
-            <div id="logo">
-                <a href="/">
-                Kenny long
-                </a>
-            </div>
-            <div class="menu-toggle">
-                <span>
-                </span>
-            </div>
-            <nav id="main-navigation">
+        <header id="header">
+            <div class="header-inner">
+                <div id="logo">
+                    <a href="/">
+                        Kenny long
+                    </a>
+                </div>
+                <div class="menu-toggle">
+                        <span style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+                </div>
+                <nav id="main-navigation">
                     <ul>
                         <li class="dropdown">
                             <a href="/animations/personalA.html">Animations</a>
@@ -60,9 +66,8 @@
                         <li><a href="/about.html">About</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
-            </nav>
-
-
+                </nav>
+            </div>
         </header>
  
 
@@ -75,7 +80,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- Featherligh JS -->
-<script src="assets/js/featherlight.js"></script>
-<script src="assets/js/featherlight.gallery.js"></script>
+<script src="/assets/js/featherlight.js"></script>
+<script src="/assets/js/featherlight.gallery.js"></script>
+
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+    }
+    
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+</script>
 </body>
 </html>

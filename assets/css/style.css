@@ -1,0 +1,212 @@
+.container-fluid{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+/***********STYLES FOR MAIN NAVIGATION/HEADER/LOGO *************/
+#header{
+    background: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 9;
+}
+#header a:hover {
+    color: black;
+}
+#header li.dropdown ul::before {
+    background: #ffffff;
+}
+.header-inner{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    animation: .6s linear .1s both fadeIn;
+}
+#logo {
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin: 0;
+    max-width: 250px;
+    height: 100%;
+    z-index: 2;
+}
+#main-navigation {
+    display: none;
+}
+/* Nav DropDown */
+#main-navigation>ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#main-navigation>ul>li {
+    position: relative;
+}
+ul li {
+    line-height: 1.75;
+}
+#main-navigation ul li a {
+    font-family: "Montserrat", Helvetica, sans-serif;
+    font-weight: 500;
+}
+#main-navigation>ul>li a {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin: 0 .65rem;
+    padding: .5em 0;
+    font-size: .65em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all .2s linear;
+}
+#main-navigation>ul>li ul {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: -.5rem;
+    margin: 0;
+    padding: .5rem;
+    list-style: none;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1em;
+    transition: all .1s .4s linear;
+}
+#main-navigation>ul>li ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0, 1),opacity 0.2s linear;
+}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+.menu-toggle{
+    position: relative;
+    right: -80%
+}
+/************ END NAVIGATION STYLES *****************/
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 820px){
+    #header {
+        right: 0 !important;
+    }
+    #logo {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        max-width: 100%;
+        min-width: 0;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    #main-navigation {
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-width: 0px;
+        max-width: 100%;
+        padding: 1rem 0;
+    }
+    #main-navigation>ul {
+        margin-right: -.65rem;
+    }
+    #main-navigation>ul>li.dropdown:hover ul {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+        z-index: 2;
+    }
+    #main-navigation>ul>li.dropdown:hover ul::before {
+        -ms-transform: none;
+        transform: none;
+        opacity: 1;
+    }
+    #main-navigation>ul>li.dropdown:hover ul li:nth-child(1) {
+        transition-delay: .1s;
+    }
+    #myNav, .overlay, .overlay-content{
+        display: none !important;
+    }
+}
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
